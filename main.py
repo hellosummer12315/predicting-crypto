@@ -959,4 +959,5 @@ run_backtest(lstm_model, "LSTM")
 
 # Close log file
 sys.stdout = original_stdout
+
 log_file.close()
