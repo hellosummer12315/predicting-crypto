@@ -27,7 +27,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 import sys
 from io import StringIO
 from sklearn.inspection import permutation_importance
-from tests.mock_data.generators import generate_mock_data 
+from mock_data.generators import generate_mock_data 
 
 ### Initial Setup and Imports
 # Set random seeds for reproducibility
@@ -964,4 +964,5 @@ run_backtest(lstm_model, "LSTM")
 sys.stdout = original_stdout
 
 log_file.close()
+
 
