@@ -1,0 +1,10 @@
+import pandas as pd
+from main import prices  # 
+
+def test_data_integrity():
+    assert isinstance(prices, pd.DataFrame), "data is not DataFrame"
+    assert not prices.empty, "data is empty"
+    print("✅ data integrity passed")
+
+if __name__ == '__main__':
+    test_data_integrity()
