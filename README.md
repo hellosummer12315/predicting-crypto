@@ -5,6 +5,8 @@
 ![ML Pipeline](https://img.shields.io/badge/pipeline-feature%20engineering%20%7C%20model%20training%20%7C%20backtesting-orange.svg)
 
 > Machine learning system for cryptocurrency trend prediction and quantitative trading
+>
+> [![Star this Repo](https://img.shields.io/github/stars/hellosummer12315/predicting-crypto?style=social)](https://github.com/hellosummer12315/predicting-crypto)
 
 ## Key Features
 
