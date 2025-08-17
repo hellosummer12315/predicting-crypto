@@ -27,6 +27,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 import sys
 from io import StringIO
 from sklearn.inspection import permutation_importance
+from tests.mock_data.generators import generate_mock_data 
 
 ### Initial Setup and Imports
 # Set random seeds for reproducibility
@@ -66,9 +67,11 @@ original_stdout = sys.stdout
 sys.stdout = Tee(sys.stdout, log_file)
 
 # Load prices data
-print("Loading prices data...")
-url = 'https://drive.google.com/uc?id=1P_5ykYLd5521QUdCxC_cMytdJ3PqESTw'
-prices = pd.read_csv(url, parse_dates=True, index_col=0)
+prices = generate_mock_data(
+    days=365*3,      
+    coin="BTC",      
+    base_price=13000 
+)
 # Remove duplicate indices, keeping the first occurrence to prevent reindexing errors
 print(f"Original prices shape: {prices.shape}")
 prices = prices[~prices.index.duplicated(keep='first')]
@@ -961,3 +964,4 @@ run_backtest(lstm_model, "LSTM")
 sys.stdout = original_stdout
 
 log_file.close()
+
